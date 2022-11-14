@@ -39,12 +39,17 @@
 	%>
 
 	<p>
-		<%=pageContext.getAttribute("p1")%> / <%=request.getAttribute("p2")%> / <%=session.getAttribute("p3")%> / <%=application.getAttribute("p4")%>
+		<%=pageContext.getAttribute("p1")%>
+		/
+		<%=request.getAttribute("p2")%>
+		/
+		<%=session.getAttribute("p3")%>
+		/
+		<%=application.getAttribute("p4")%>
 	</p>
 
-	<p>
-		${pageScope.p1} / ${requestScope.p2} / ${sessionScope.p3} / ${applicationScope.p4}
-	</p>
+	<p>${pageScope.p1} / ${requestScope.p2} / ${sessionScope.p3} /
+		${applicationScope.p4}</p>
 
 	<p>
 		<!-- 속성값을 가져올 때 영역을 명시하지 않으면 page->request->session->application순으로 검색을 한다. -->
