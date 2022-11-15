@@ -1,4 +1,4 @@
-package servletdemo.part03;
+package servletdemo.part04;
 
 import java.io.IOException;
 
@@ -9,14 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/loginFrom")
-public class LoginFormController extends HttpServlet {
+// http://localhost:8090:webdemo/empList
+@WebServlet("/empList")
+public class EmployeesController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String path = "/servletview/part03/form.jsp";
-		
+		EmployeesDAO dao = EmployeesDAO.getInstance();
+		req.setAttribute("aList", dao.listAll());
+
+		String path = "/servletview/part04/list.jsp";
 		RequestDispatcher dis = req.getRequestDispatcher(path);
 		dis.forward(req, resp);
+
 	} // end doGet()
 
 } // end class

@@ -23,7 +23,7 @@ public class MemberController extends HttpServlet {
 		dto.setFid(fid);
 		dto.setFpass(fpass);
 		
-		req.setAttribute("dto", dto);
+		req.setAttribute("dto", dto); // request영역에 저장됨
 		
 		String path = "/servletview/part03/result.jsp";
 		RequestDispatcher dis = req.getRequestDispatcher(path);
